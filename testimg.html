@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image test</title>
+
+    <style>
+        #container {
+            border: 1px solid red
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+
+
+        <div id="container">
+
+            
+
+        </div>
+
+
+
+
+    <script>
+
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+var timeoutID = 0;
+
+(async ()=> {
+
+
+    var container = document.getElementById('container');
+
+
+    const lpdataurl = '/data/lp-data.json';
+
+try {
+  const response = await fetch(lpdataurl);
+
+  // Check if the request was successful (status code 200)
+  if (!response.ok) {
+    throw new Error(`Network response was not ok, status code: ${response.status}`);
+  }
+
+  const jsonData = await response.json();
+
+
+  // Do something with jsonData
+  jsonData.data_a.forEach(item => {
+
+    console.log(item.imageUrl);
+
+    let imageElement = document.createElement('img');
+
+    imageElement.src = item.imageUrl;
+    imageElement.width = '200';
+    imageElement.height = '200';
+    imageElement.loading = 'lazy';
+
+
+    container.appendChild(imageElement);
+
+
+    timeoutID = setTimeout(()=> {
+        console.log('wait')
+    }, 300);
+       
+
+  });
+
+
+  clearTimeout(timeoutID);
+
+
+} catch (error) {
+  console.error('Fetch error:', error);
+}
+
+
+
+})();
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

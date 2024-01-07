@@ -1,0 +1,137 @@
+15: https://foxflannel.com/collections/new-classic-flannel-mixed-weights
+
+15: https://foxflannel.com/collections/sports-jacketing
+
+15: https://foxflannel.com/collections/vintage-fox
+
+
+
+20: https://shop.dugdalebros.com/new-fine-worsted/sort/rel/rows/20/page/1/
+
+20: https://shop.dugdalebros.com/royal-classic-vantage
+
+20: https://shop.dugdalebros.com/natural-elements/sort/rel/rows/20/page/1/
+
+
+
+
+67: https://www.loropiana.com/textile/fabrics/Fabrics/Men’s-Custom-/c/02-00031-00030-00001?q=%3Aname-asc%3Abunch%3A704&text=&bunchCode=#
+
+Need to inspect again it was showing 67 before
+5 : https://www.loropiana.com/textile/fabrics/Fabrics/Men’s-Custom-/c/02-00031-00030-00001?q=%3Aname-asc%3Abunch%3A667%3Afibra%3ACamel%2BHair&text=&bunchCode=#
+
+51: https://www.loropiana.com/textile/fabrics/Fabrics/Men’s-Custom-/c/02-00031-00030-00001?q=%3Aname-asc%3Abunch%3A696&text=&bunchCode=#
+
+43: https://www.loropiana.com/textile/fabrics/Fabrics/Men’s-Custom-/c/02-00031-00030-00001?q=%3Aname-asc%3Abunch%3A654&text=&bunchCode=#
+
+72: https://www.loropiana.com/textile/fabrics/Fabrics/Men’s-Custom-/c/02-00031-00030-00001?q=%3Aname-asc%3Abunch%3A716&text=&bunchCode=#
+
+237 : record saved 
+
+
+
+31: https://www.harrisons1863.com/brand-portfolio/collection/harrisons-spring-ram/
+
+65: https://www.harrisons1863.com/brand-portfolio/collection/wbill-shetland-tweeds/
+
+30: https://www.harrisons1863.com/brand-portfolio/collection/wbill-fine-irish-linens/
+
+79: https://www.harrisons1863.com/brand-portfolio/collection/harrisons-mersolair/
+
+
+https://www.loropiana.com/textile/login
+email: lloyd@tailormadelondon.com
+password: Stratts123!
+
+
+15
+15
+15
+20
+20
+20 = 105 : done
+-----
+67
+5
+51
+43
+72
+------- (238 in json, in database = 203)
+31
+64
+30
+79 = 204
+-------
+543
+-------
+
+
+check CODUX CREATED BY WIX
+--------------------------
+
+SCrapping browser to captcha solving, prompts IP rotation\
+https://brightdata.com/pricing/web-scraper
+
+
+Data scrapping solutions
+-------------------------
+NodeJS 
+- Puppeteer
+- Cheerio
+
+Python
+----------
+- Beautiful Soup and Requests 
+- Scrapy 
+- Selenium 
+
+
+
+
+                /*
+                const title = await page.evaluate(el => el.querySelector("h2 > a > span").textContent, productHandle);               
+                const price = await page.evaluate(el => el.querySelector(".a-price > .a-offscreen").textContent, productHandle);
+                const image = await page.evaluate(el => el.querySelector(".s-image").getAttribute('src'), productHandle);
+                const productUrl = await page.evaluate(el => el.querySelector("a").getAttribute('src'), productHandle);
+                console.log(productUrl);
+                */
+
+
+
+                /*
+                const title = await page.evaluate(el => el.querySelector(".snize-title").textContent, productHandle);
+                const price = await page.evaluate(el => el.querySelector(".snize-price.money").textContent, productHandle);
+                amazonProducts.push({productUrl, title, price});
+                */
+
+*tailormade*
+foxflannel.com : 45
+shop.dugdalebros.com : 60
+harrisons1863 : 200
+-------------------------
+total : 305
+--------------------------
+
+
+dugdalebros.com : 60
+foxflannel.com : 45
+-----------------------------------------------------
+105 : 145 items to add to make it 250
+-----------------------------------------------------
+loropiana.com : take 73 out of 203 : disable 130 items 
+harrisons1863.com : take 72 out of 200 : disabled items 128
+
+
+select id, title, productMeta FROM swatches where source = 'loropiana.com' AND 
+JSON_EXTRACT(productMeta, '$."bunch"') = 'Bunch 696 - WOOL & CASHMERE FLANNELS' ORDER BY ID limit 20;
+
+
+Bunch 704 - MARE last id
+544
+
+
+UPDATE swatches
+SET status = 0
+WHERE id > 544
+    AND source = 'loropiana.com'
+    AND JSON_EXTRACT(productMeta, '$."bunch"') = 'Bunch 704 - MARE';
